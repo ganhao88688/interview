@@ -178,6 +178,11 @@ button {
 .CalculateScore form * {
   margin: 2px;
 }
+.CalculateScore form div.formOption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .CalculateScore form div.formOption:hover {
   background-color: aquamarine;
 }

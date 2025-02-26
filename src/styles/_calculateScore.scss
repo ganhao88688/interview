@@ -13,6 +13,9 @@ button {
             margin: 2px;
         }
         div.formOption {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             &:hover {
                 background-color: aquamarine;
             }
