@@ -54,7 +54,6 @@ const ConsumeItem = ({
         onClick={(e) => {
           e.preventDefault();
           deleteItem(index);
-          console.log("in delete button");
         }}
       >
         刪除

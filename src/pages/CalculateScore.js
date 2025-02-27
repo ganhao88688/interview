@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ConsumeItem from "../components/ConsumeItem";
 
 const CalculateScore = () => {
@@ -6,7 +6,7 @@ const CalculateScore = () => {
     { name: "預設項目1", cost: 0, score: 0 },
     { name: "預設項目2", cost: 0, score: 0 },
   ]);
-  let [formCount, setFormCount] = useState(0);
+  let [formCount, setFormCount] = useState(2);
   let [totalCost, setTotalCost] = useState(0);
 
   let addItem = () => {
@@ -14,18 +14,28 @@ const CalculateScore = () => {
     let tempArray = formDataItems.push({ name: "", cost: "", score: 0 });
     setFormDataItems(tempArray);
   };
-  let deleteItem = (index) => {
-    // setTotalCost(totalCost - formDataItems[index].cost);
+  let deleteItem = async (index) => {
+    // let newFormCount = ;
+    setTotalCost(totalCost - formDataItems[index].cost);
+    setFormCount(formCount - 1);
     setFormDataItems(formDataItems.splice(index, 1));
-
-    console.log(`Form Data Items:${JSON.stringify(formDataItems)}`);
-    // setFormCount(formCount - 1);
   };
+  useEffect(
+    () =>
+      console.log(
+        `Form Data Items:${JSON.stringify(
+          formDataItems
+        )} formCount(${formCount})`
+      ),
+    [formCount]
+  );
   return (
     <div className="CalculateScore">
       <h1>消費紀錄</h1>
       <form>
         {formDataItems.map((item, index) => {
+          console.log(`in map, index(${index})`);
+          if (formCount == 0) return <div></div>;
           return (
             <ConsumeItem
               key={index}
@@ -47,8 +57,9 @@ const CalculateScore = () => {
       <div className="button">
         <button
           onClick={(e) => {
-            addItem();
             e.preventDefault();
+            console.log(typeof formDataItems);
+            addItem();
           }}
         >
           新增
