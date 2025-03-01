@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const ConsumeItem = ({
   index,
@@ -9,9 +9,10 @@ const ConsumeItem = ({
   deleteItem,
 }) => {
   let item = formDataItems[index];
-  let cost = item.cost;
   let [size, setSize] = useState(window.innerWidth / 100);
+  let [update, setUpdate] = useState(1);
   let costChange = (e) => {
+    console.log("costChange");
     if (e.target.value) {
       //nan
       let oldCost = item.cost;
@@ -31,9 +32,21 @@ const ConsumeItem = ({
         <label>項目名稱:</label>
         <input
           placeholder="項目名稱"
-          defaultValue={item.name}
+          value={item.name}
           size={size}
-        ></input>
+          onChange={(e) => {
+            console.log("name change");
+            setFormDataItems((prevState) => {
+              prevState[index].name = e.target.value;
+              return prevState;
+            });
+            //forceUpdate
+            setUpdate((prevState) => {
+              prevState = prevState == 0 ? 1 : 0;
+              return prevState;
+            });
+          }}
+        />
       </div>
       <div className="item">
         <label>金額:</label>
@@ -41,18 +54,19 @@ const ConsumeItem = ({
           type="number"
           placeholder="金額"
           min="0"
-          defaultValue={cost}
+          value={item.cost}
           style={{ width: size * 10 + 5 }}
           onChange={costChange}
-        ></input>
+        />
       </div>
       <div className="item">
         <label>評分:</label>
-        <input placeholder="1~5" size={size} list="foodScore"></input>
+        <input placeholder="1~5" size={size} list="foodScore" />
       </div>
       <button
         onClick={(e) => {
           e.preventDefault();
+          console.log(`delete item${JSON.stringify(formDataItems[index])})`);
           deleteItem(index);
         }}
       >

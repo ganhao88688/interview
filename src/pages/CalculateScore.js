@@ -10,31 +10,30 @@ const CalculateScore = () => {
   let [totalCost, setTotalCost] = useState(0);
 
   let addItem = () => {
+    console.log("add item");
+    setFormDataItems([
+      ...formDataItems,
+      { name: `預設項目${formCount + 1}`, cost: 0, score: 0 },
+    ]);
     setFormCount(formCount + 1);
-    let tempArray = formDataItems.push({ name: "", cost: "", score: 0 });
-    setFormDataItems(tempArray);
   };
-  let deleteItem = async (index) => {
-    // let newFormCount = ;
+  let deleteItem = (index) => {
     setTotalCost(totalCost - formDataItems[index].cost);
     setFormCount(formCount - 1);
-    setFormDataItems(formDataItems.splice(index, 1));
+    setFormDataItems((prevState) => {
+      prevState.splice(index, 1);
+      return prevState;
+    });
   };
-  useEffect(
-    () =>
-      console.log(
-        `Form Data Items:${JSON.stringify(
-          formDataItems
-        )} formCount(${formCount})`
-      ),
-    [formCount]
-  );
+  useEffect(() => {
+    console.log("form data update");
+    formDataItems.map((item) => console.log(JSON.stringify(item)));
+  }, [formDataItems]);
   return (
     <div className="CalculateScore">
       <h1>消費紀錄</h1>
       <form>
         {formDataItems.map((item, index) => {
-          console.log(`in map, index(${index})`);
           if (formCount == 0) return <div></div>;
           return (
             <ConsumeItem
@@ -58,7 +57,6 @@ const CalculateScore = () => {
         <button
           onClick={(e) => {
             e.preventDefault();
-            console.log(typeof formDataItems);
             addItem();
           }}
         >
