@@ -19,6 +19,11 @@ button {
             &:hover {
                 background-color: aquamarine;
             }
+            .score {
+                input:invalid {
+                    background-color: rgb(234, 103, 124);
+                }
+            }
         }
     }
     div.result {

@@ -186,6 +186,9 @@ button {
 .CalculateScore form div.formOption:hover {
   background-color: aquamarine;
 }
+.CalculateScore form div.formOption .score input:invalid {
+  background-color: rgb(234, 103, 124);
+}
 .CalculateScore div.result * {
   margin: 2px;
 }

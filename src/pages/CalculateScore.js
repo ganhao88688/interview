@@ -3,8 +3,8 @@ import ConsumeItem from "../components/ConsumeItem";
 
 const CalculateScore = () => {
   let [formDataItems, setFormDataItems] = useState([
-    { name: "預設項目1", cost: 0, score: 0 },
-    { name: "預設項目2", cost: 0, score: 0 },
+    { name: "預設項目1", cost: 0, score: 1 },
+    { name: "預設項目2", cost: 0, score: 1 },
   ]);
   let [formCount, setFormCount] = useState(2);
   let [totalCost, setTotalCost] = useState(0);
