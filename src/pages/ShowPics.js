@@ -56,8 +56,8 @@ const Homepage = () => {
       />
       <div className="pictures">
         {data &&
-          data.map((picture) => {
-            return <Picture data={picture} />;
+          data.map((picture, index) => {
+            return <Picture key={index} data={picture} />;
           })}
       </div>
       <div className="morePicture">

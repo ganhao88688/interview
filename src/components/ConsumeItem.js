@@ -74,6 +74,21 @@ const ConsumeItem = ({
               prevState[index].score = e.target.value;
               return prevState;
             });
+            setUpdate((prevState) => {
+              prevState = prevState == 0 ? 1 : 0;
+              return prevState;
+            });
+          }}
+          onClick={(e) => {
+            setFormDataItems((prevState) => {
+              prevState[index].score = "";
+              return prevState;
+            });
+            setUpdate((prevState) => {
+              prevState = prevState == 0 ? 1 : 0;
+              return prevState;
+            });
+            console.log(`score(${e.target.value})`);
           }}
         />
       </div>
