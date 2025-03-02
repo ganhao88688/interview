@@ -33,7 +33,7 @@ const Homepage = () => {
     } else {
       newURL = `https://api.pexels.com/v1/curated?page=${page + 1}&per_page=15`;
     }
-    let result = await axios.get(newURL, { Authorization: auth });
+    let result = await axios.get(newURL, { headers: { Authorization: auth } });
 
     setData(data.concat(result.data.photos));
   };
