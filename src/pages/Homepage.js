@@ -1,7 +1,12 @@
 const Homepage = () => {
   return (
     <div className="Homepage">
-      <h1>welcome~</h1>
+      <div className="picHandler">
+        <div className="headshot">
+          <img src="/image/tempHeadShot.jfif" alt="headShot"></img>
+        </div>
+      </div>
+      <div className="aboutMe"></div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const Layout = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">首頁</Link>
+            <Link to="/">自我介紹</Link>
           </li>
           <li>
             <Link to="/resume">簡歷</Link>

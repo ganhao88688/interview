@@ -29,19 +29,33 @@ const Resume = () => {
         </ul>
         <h1>技能</h1>
         <hr></hr>
-        <ul>
-          <li>react</li>
-          <li>scss</li>
-          <li className="ulINLi">
-            <h4>tool:</h4>
+        <div className="skill">
+          <div className="frontEnd">
+            <h2>Front End:</h2>
             <ul>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Scss</li>
+            </ul>
+          </div>
+          <div className="tools">
+            <h2>Tools:</h2>
+            <ul>
+              <li>cndjs</li>
               <li>Prettier</li>
               <li>indent-rainbow</li>
               <li>Live Sass Compiler</li>
               <li>Live Sever</li>
+              <li>Nodemon</li>
             </ul>
-          </li>
-        </ul>
+          </div>
+          <div className="source">
+            <h2>Source:</h2>
+            <ul>
+              <li>Pixels</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -144,11 +144,28 @@ nav ul li:hover {
   padding: 2px;
   margin: 5px;
 }
-.resume .wordHandler ul .ulINLi:hover {
-  background-color: transparent;
+.resume .wordHandler ul li {
+  font-size: 1.5rem;
 }
 .resume .wordHandler ul li:hover {
   background-color: greenyellow;
+}
+.resume .wordHandler div.skill {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.resume .wordHandler div.skill ul {
+  font-size: 1.5rem;
+}
+.resume .wordHandler div.skill div.frontEnd {
+  flex: 2 1 150px;
+}
+.resume .wordHandler div.skill div.tools {
+  flex: 2 1 150px;
+}
+.resume .wordHandler div.skill div.source {
+  flex: 1 1 150px;
 }
 
 @keyframes helloPic {
