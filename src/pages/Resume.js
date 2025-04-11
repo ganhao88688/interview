@@ -12,7 +12,11 @@ const Resume = () => {
     <div className="resume" style={{ flexDirection: flexDirection }}>
       <div className="picHandler">
         <div className="headshot">
-          <img src="/image/tempHeadShot.jfif" alt="headShot"></img>
+          <img
+            src="/image/headShot.jpg
+          "
+            alt="headShot"
+          ></img>
         </div>
       </div>
       <div className="wordHandler">
@@ -25,7 +29,9 @@ const Resume = () => {
         <h1>經歷</h1>
         <hr></hr>
         <ul>
-          <li>松下()</li>
+          <li>精誠資訊(學習Docker、Linux教育訓練)</li>
+          <li>桓基科技(線框圖、系統操作手冊)</li>
+          <li>台灣松下電器股份有限公司(電腦組裝)</li>
         </ul>
         <h1>技能</h1>
         <hr></hr>
